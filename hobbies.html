@@ -8,24 +8,164 @@
         body { font-family: Georgia; text-align: center; margin: 0; padding: 0; }
         header { background-color: #333; color: white; padding: 20px; font-size: 24px; }
         .container { padding: 20px; }
-        
+        .carousel-slide {
+    display: none;
+    text-align: center;
+}
+
+.carousel-slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel-slide h3 {
+    margin-top: 15px;
+}
+
+.carousel-slide p {
+    max-width: 500px;
+    margin: 10px auto;
+}
+
+.carousel-slide a {
+    color: #007acc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
     </style>
     <nav>
     <a href="index.html">Home</a> |
     <a href="hobbies.html">Hobbies</a>
     </nav>
 </head>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".carousel-slide");
+
+function showSlide(index) {
+    slides.forEach(slide => slide.style.display = "none");
+    slides[index].style.display = "block";
+}
+
+function changeSlide(direction) {
+    currentSlide += direction;
+    if (currentSlide < 0) currentSlide = slides.length - 1;
+    if (currentSlide >= slides.length) currentSlide = 0;
+    showSlide(currentSlide);
+}
+
+showSlide(currentSlide);
+</script>
+
+
 <body>
 
 <header>My Hobbies</header>
 
 <div class="container">
-    <p>I enjoy coding, tabletop RPGs, cooking, and tinkering with projects.</p>
-
-    <p>
-        <a href="index.html">← Back to Portfolio</a>
-    </p>
+    <p> What books have I been reading?</p>
 </div>
+<div class="carousel" data-index="0">
+    <button class="prev" onclick="changeSlide(this, -1)">❮</button>
+
+    <div class="carousel-slide">
+        <img src="images/project1.png">
+        <h3>Project One</h3>
+        <p>
+            A short description of the project.
+            <br>
+            <a href="#">View Project</a>
+        </p>
+    </div>
+
+    <div class="carousel-slide">
+        <img src="images/project2.png">
+        <h3>Project Two</h3>
+        <p>
+            Another description goes here.
+            <br>
+            <a href="#">GitHub Repo</a>
+        </p>
+    </div>
+
+    <div class="carousel-slide">
+        <img src="images/project3.png">
+        <h3>Project Three</h3>
+        <p>
+            Final project description.
+            <br>
+            <a href="#">Live Demo</a>
+        </p>
+    </div>
+
+    <button class="next" onclick="changeSlide(this, 1)">❯</button>
+</div>
+
+<div class="container">
+    <p> Here are some the Magic the Gathering commander decks I'm currently enjoying.</p>
+</div>
+<div class="carousel" data-index="0">
+    <button class="prev" onclick="changeSlide(this, -1)">❮</button>
+
+    <div class="carousel-slide">
+        <img src="images/commander-calix.jpg">
+        <h3>Project One</h3>
+        <p>
+            Enchantment based, with some nice voltron synergy to get Calix or another creaure through.
+            https://moxfield.com/decks/AwnP_-M6qkueqZUfj8kvQQ
+            <br>
+            <a href="#">View Project</a>
+        </p>
+    </div>
+
+    <div class="carousel-slide">
+        <img src="images/commander-ken.jpg">
+        <h3>Project Two</h3>
+        <p>
+            Yo ho, yo ho a pirate's life for me! Theft and Treasures my friends!
+            <br>
+            <a href="#">GitHub Repo</a>
+        </p>
+    </div>
+
+    <div class="carousel-slide">
+        <img src="images/commander-zinnia.jpg">
+        <h3>Project Three</h3>
+        <p>
+            A buncha cute critter coming to smack you. It's almost soley creature based.
+            <br>
+            <a href="#">Live Demo</a>
+        </p>
+    </div>
+
+    <div class="carousel-slide">
+        <img src="images/commander-ravos.jpg">
+        <h3>Project Three</h3>
+        <p>
+            Partnered with Reyhan, human tribal where you through more expendable goobers and can get them back.
+            <br>
+            <a href="#">Live Demo</a>
+        </p>
+    </div>
+
+    <div class="carousel-slide">
+        <img src="images/commander-reyhan.jpg">
+        <h3>Project Three</h3>
+        <p>
+            Partnered with Ravos, she ensures that the counter you put on a dead creature don't go to waste.
+            <br>
+            <a href="#">Live Demo</a>
+        </p>
+    </div>
+
+    <button class="next" onclick="changeSlide(this, 1)">❯</button>
+</div>
+
+
+
 
 </body>
 </html>
