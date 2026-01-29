@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies</title>
+    <style>
+        body { font-family: Georgia; text-align: center; margin: 0; padding: 0; }
+        header { background-color: #333; color: white; padding: 20px; font-size: 24px; }
+        .container { padding: 20px; }
+        a { color: blue; text-decoration: none; font-size: 18px; }
+    </style>
+</head>
+<body>
+
+<header>My Hobbies</header>
+
+<div class="container">
+    <p>I enjoy coding, tabletop RPGs, cooking, and tinkering with projects.</p>
+
+    <p>
+        <a href="index.html">← Back to Portfolio</a>
+    </p>
+</div>
+
+</body>
+</html>
