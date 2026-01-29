@@ -4,80 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hobbies</title>
+
     <style>
-        body { font-family: Georgia; text-align: center; margin: 0; padding: 0; }
-        header { background-color: #333; color: white; padding: 20px; font-size: 24px; }
-        .container { padding: 20px; }
+        body {
+            font-family: Georgia;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        nav {
+            margin: 15px 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* ===== Carousel Styles ===== */
+
+        .carousel {
+            margin: 30px auto;
+            text-align: center;
+        }
+
         .carousel-slide {
-    display: none;
-    text-align: center;
-}
+            display: none;
+        }
 
-.carousel-slide img {
-    width: 100%;
-    border-radius: 10px;
-}
+        .carousel-slide img {
+            width: 100%;
+            max-width: 400px;   /* controls image size */
+            height: auto;
+            border-radius: 10px;
+        }
 
-.carousel-slide h3 {
-    margin-top: 15px;
-}
+        .carousel-slide h3 {
+            margin-top: 15px;
+        }
 
-.carousel-slide p {
-    max-width: 500px;
-    margin: 10px auto;
-}
+        .carousel-slide p {
+            max-width: 500px;
+            margin: 10px auto;
+        }
 
-.carousel-slide a {
-    color: #007acc;
-    font-weight: bold;
-    text-decoration: none;
-}
+        .carousel-slide a {
+            color: #007acc;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
+        /* ===== Bottom Controls ===== */
 
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .carousel-controls button {
+            background: #333;
+            color: white;
+            border: none;
+            font-size: 18px;
+            padding: 8px 14px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .carousel-controls button:hover {
+            background: #555;
+        }
     </style>
-    <nav>
-    <a href="index.html">Home</a> |
-    <a href="hobbies.html">Hobbies</a>
-    </nav>
 </head>
-
-<script>
-document.querySelectorAll(".carousel").forEach(carousel => {
-    showSlide(carousel, 0);
-});
-
-
-function changeSlide(button, direction) {
-    const carousel = button.closest(".carousel");
-    let index = parseInt(carousel.dataset.index);
-    const slides = carousel.querySelectorAll(".carousel-slide");
-
-    index += direction;
-    if (index < 0) index = slides.length - 1;
-    if (index >= slides.length) index = 0;
-
-    carousel.dataset.index = index;
-    showSlide(carousel, index);
-}
-
-function showSlide(carousel, index) {
-    const slides = carousel.querySelectorAll(".carousel-slide");
-    slides.forEach(slide => slide.style.display = "none");
-    slides[index].style.display = "block";
-}
-</script>
-
-
 
 <body>
 
 <header>My Hobbies</header>
 
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="hobbies.html">Hobbies</a>
+</nav>
+
 <div class="container">
-    <p> What books have I been reading?</p>
+    <p>What books have I been reading?</p>
 </div>
+
 <div class="carousel" data-index="0">
-    <button class="prev" onclick="changeSlide(this, -1)">❮</button>
 
     <div class="carousel-slide">
         <img src="Images/project1.png">
@@ -109,20 +131,23 @@ function showSlide(carousel, index) {
         </p>
     </div>
 
-    <button class="next" onclick="changeSlide(this, 1)">❯</button>
+    <div class="carousel-controls">
+        <button onclick="changeSlide(this, -1)">❮</button>
+        <button onclick="changeSlide(this, 1)">❯</button>
+    </div>
 </div>
 
 <div class="container">
-    <p> Here are some the Magic the Gathering commander decks I'm currently enjoying.</p>
+    <p>Here are some of the Magic the Gathering commander decks I'm currently enjoying.</p>
 </div>
+
 <div class="carousel" data-index="0">
-    <button class="prev" onclick="changeSlide(this, -1)">❮</button>
 
     <div class="carousel-slide">
         <h3>Calix, Guided by Fate</h3>
         <img src="Images/commander-calix.jpg">
         <p>
-            Enchantment based, with some nice voltron synergy to get Calix or another creaure through.
+            Enchantment-based voltron strategy.
             <br>
             <a href="https://moxfield.com/decks/AwnP_-M6qkueqZUfj8kvQQ">View Deck</a>
         </p>
@@ -131,9 +156,8 @@ function showSlide(carousel, index) {
     <div class="carousel-slide">
         <h3>Edward Kenway</h3>
         <img src="Images/commander-ken.jpg">
-        
         <p>
-            Yo ho, yo ho a pirate's life for me! Theft and Treasures my friends!
+            Yo ho, yo ho — theft and treasures!
             <br>
             <a href="https://moxfield.com/decks/gSkHt0sWbk-h89G8BYV9rQ">View Deck</a>
         </p>
@@ -142,9 +166,8 @@ function showSlide(carousel, index) {
     <div class="carousel-slide">
         <h3>Zinnia</h3>
         <img src="Images/commander-zinnia.jpg">
-        
         <p>
-            A buncha cute critter coming to smack you. It's almost soley creature based.
+            Cute critters with a mean punch.
             <br>
             <a href="https://moxfield.com/decks/Dnl8QyWeQESMeIcKaIExXA">View Deck</a>
         </p>
@@ -153,9 +176,8 @@ function showSlide(carousel, index) {
     <div class="carousel-slide">
         <h3>Ravos, Soultender</h3>
         <img src="Images/commander-ravos.jpg">
-        
         <p>
-            Partnered with Reyhan, human tribal where you through more expendable goobers and can get them back.
+            Human tribal recursion.
             <br>
             <a href="https://moxfield.com/decks/XtaYaqmMjUSYpjixYHa8hg">View Deck</a>
         </p>
@@ -164,19 +186,43 @@ function showSlide(carousel, index) {
     <div class="carousel-slide">
         <h3>Reyhan, Last of the Abzan</h3>
         <img src="Images/commander-reyhan.jpg">
-        
         <p>
-            Partnered with Ravos, she ensures that the counter you put on a dead creature don't go to waste.
+            Counters that never go to waste.
             <br>
             <a href="https://moxfield.com/decks/XtaYaqmMjUSYpjixYHa8hg">View Deck</a>
         </p>
     </div>
 
-    <button class="next" onclick="changeSlide(this, 1)">❯</button>
+    <div class="carousel-controls">
+        <button onclick="changeSlide(this, -1)">❮</button>
+        <button onclick="changeSlide(this, 1)">❯</button>
+    </div>
 </div>
 
+<script>
+document.querySelectorAll(".carousel").forEach(carousel => {
+    showSlide(carousel, 0);
+});
 
+function changeSlide(button, direction) {
+    const carousel = button.closest(".carousel");
+    let index = parseInt(carousel.dataset.index);
+    const slides = carousel.querySelectorAll(".carousel-slide");
 
+    index += direction;
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+
+    carousel.dataset.index = index;
+    showSlide(carousel, index);
+}
+
+function showSlide(carousel, index) {
+    const slides = carousel.querySelectorAll(".carousel-slide");
+    slides.forEach(slide => slide.style.display = "none");
+    slides[index].style.display = "block";
+}
+</script>
 
 </body>
 </html>
