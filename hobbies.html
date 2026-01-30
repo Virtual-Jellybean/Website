@@ -32,6 +32,12 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            background-color: #2b2b2b;   /* dark grey */
+            padding: 25px 15px 20px;
+            border-radius: 12px;
+            margin: 40px auto;
+            max-width: 700px;
+
         }
 
         .carousel-slide {
@@ -249,11 +255,7 @@ function changeSlide(button, direction) {
     showSlide(carousel, index);
 }
 
-function showSlide(carousel, index) {
-    const slides = carousel.querySelectorAll(".carousel-slide");
-    slides.forEach(slide => slide.style.display = "none");
-    slides[index].style.display = "block";
-}
+
 </script>
 
 <div id="site-footer"></div>
