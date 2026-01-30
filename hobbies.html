@@ -34,11 +34,27 @@
         .carousel {
             margin: 30px auto;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .carousel-slide {
-            display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
         }
+
+        .carousel-slide.active {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+        }
+
 
         .carousel-slide img {
             width: 100%;
@@ -252,7 +268,13 @@ loadLayout();
 
 
 document.querySelectorAll(".carousel").forEach(carousel => {
-    showSlide(carousel, 0);
+    function showSlide(carousel, index) {
+    const slides = carousel.querySelectorAll(".carousel-slide");
+
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+}
+;
 });
 
 function changeSlide(button, direction) {
