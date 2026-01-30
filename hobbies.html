@@ -251,10 +251,13 @@ function changeSlide(button, direction) {
 }
 
 function showSlide(carousel, index) {
+    const track = carousel.querySelector(".carousel-track");
     const slides = carousel.querySelectorAll(".carousel-slide");
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[index].classList.add("active");
+    const slideWidth = slides[0].offsetWidth;
+
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
 }
+
 </script>
 
 
