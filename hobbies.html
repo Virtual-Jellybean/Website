@@ -32,12 +32,6 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            background-color: #2b2b2b;   /* dark grey */
-            padding: 25px 15px 20px;
-            border-radius: 12px;
-            margin: 40px auto;
-            max-width: 700px;
-
         }
 
         .carousel-slide {
@@ -220,7 +214,6 @@
 
 
 <script>
-
 async function loadLayout() {
     const header = await fetch("header.html").then(res => res.text());
     const footer = await fetch("footer.html").then(res => res.text());
@@ -231,20 +224,15 @@ async function loadLayout() {
 
 loadLayout();
 
+/* ===== Carousel Logic ===== */
 
 document.querySelectorAll(".carousel").forEach(carousel => {
-    function showSlide(carousel, index) {
-    const slides = carousel.querySelectorAll(".carousel-slide");
-
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[index].classList.add("active");
-}
-;
+    showSlide(carousel, 0);
 });
 
 function changeSlide(button, direction) {
     const carousel = button.closest(".carousel");
-    let index = parseInt(carousel.dataset.index);
+    let index = parseInt(carousel.dataset.index, 10);
     const slides = carousel.querySelectorAll(".carousel-slide");
 
     index += direction;
@@ -255,8 +243,13 @@ function changeSlide(button, direction) {
     showSlide(carousel, index);
 }
 
-
+function showSlide(carousel, index) {
+    const slides = carousel.querySelectorAll(".carousel-slide");
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+}
 </script>
+
 
 <div id="site-footer"></div>
 
