@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div id="site-header"></div>
     <title>Ben Luftig </title>
-    <link rel="icon" href="Images/Glaceon.png" type="image/png">
     <style>
         body { font-family: Gerogia, sans-serif; text-align: center; margin: 0; padding: 0; }
         header { background-color: #333; color: white; padding: 20px; font-size: 24px; }
@@ -13,10 +13,6 @@
         .resume { margin-top: 20px; }
         .resume a { text-decoration: none; color: blue; font-size: 18px; }
     </style>
-    <nav>
-    <a href="index.html">Home</a> |
-    <a href="hobbies.html">Hobbies</a>
-    </nav>
 </head>
 <body>
     <header>Ben Luftig - Portfolio</header>
@@ -34,4 +30,20 @@
         </div>
     </div>
 </body>
+<script>
+async function loadLayout() {
+    const header = await fetch("header.html").then(res => res.text());
+    const footer = await fetch("footer.html").then(res => res.text());
+
+    document.getElementById("site-header").innerHTML = header;
+    document.getElementById("site-footer").innerHTML = footer;
+}
+
+loadLayout();
+
+</script>
+<div id="site-footer"></div>
+
+<script src="layout.js"></script>
+
 </html>

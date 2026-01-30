@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div id="site-header"></div>
     <title>Hobbies</title>
-    <link rel="icon" href="Images/Glaceon.png" type="image/png">
+    
     <style>
         body {
             font-family: Georgia;
@@ -127,11 +128,6 @@
 
 <body>
 
-<nav>
-    <a href="index.html">Home</a> |
-    <a href="hobbies.html">Hobbies</a>
-</nav>
-
 <header>My Hobbies</header>
 
 
@@ -239,24 +235,22 @@
     </div>
 </div>
 
-<footer>
-    <div class="footer-content">
-        <p>Connect with me</p>
 
-        <div class="footer-links">
-            <a href="mailto:benaluftig@example.com">Email</a>
-            <a href="https://www.linkedin.com/in/ben-luftig-732750294/" target="_blank">LinkedIn</a>
-            <a href="https://www.instagram.com/virtual_jellybean" target="_blank">Instagram</a>
-            <a href="https://discord.com/users/Magic_Jellybean" target="_blank">Discord</a>
-            <a href="https://www.goodreads.com/user/show/98654958-ben-luftig" target="_blank">Goodreads</a>
-        </div>
-
-        <p class="footer-note">© 2026 Ben Luftig</p>
-    </div>
-</footer>
 
 
 <script>
+
+async function loadLayout() {
+    const header = await fetch("header.html").then(res => res.text());
+    const footer = await fetch("footer.html").then(res => res.text());
+
+    document.getElementById("site-header").innerHTML = header;
+    document.getElementById("site-footer").innerHTML = footer;
+}
+
+loadLayout();
+
+
 document.querySelectorAll(".carousel").forEach(carousel => {
     showSlide(carousel, 0);
 });
@@ -281,5 +275,8 @@ function showSlide(carousel, index) {
 }
 </script>
 
-</body>
+<div id="site-footer"></div>
+
+<script src="layout.js"></script>
+
 </html>
