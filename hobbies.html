@@ -26,26 +26,28 @@
         }
 
         /* ===== Carousel Styles ===== */
+        
 
         .carousel {
-            margin: 30px auto;
-            text-align: center;
-            position: relative;
             overflow: hidden;
-            height: 480px;
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s ease;
         }
 
         .carousel-slide {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        opacity: 0;
-        transform: translateX(20px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        pointer-events: none;
-        height: fit-content
+            min-width: 100%;
+            opacity: 1;              /* no fading needed */
+            transform: none;
+            pointer-events: auto;
         }
+
+
+
+ 
 
         .carousel-slide.active {
         opacity: 1;
@@ -53,7 +55,7 @@
         pointer-events: auto;
         }
 
-        .carousel-track { max-height: 480px; }
+
 
 
         .carousel-slide img {
@@ -116,40 +118,41 @@
 </div>
 
 <div class="carousel" data-index="0">
+    <div class="carousel-track">       
+        <div class="carousel-slide">
+            <h3>Currently Reading:</h3>
+            <img src="Images/EqualRites.jpg">
 
-    <div class="carousel-slide">
-        <h3>Currently Reading:</h3>
-        <img src="Images/EqualRites.jpg">
+            <p>
+                Rereading on my way to finish the whole Discworld series.
+                <br>
+            </p>
+        </div>
 
-        <p>
-            Rereading on my way to finish the whole Discworld series.
-            <br>
-        </p>
+        <div class="carousel-slide">
+            <h3>Next up:</h3>
+            <img src="Images/HowToBuildACar.jpg">
+            <p>
+                In Preperation for the new F1 regulations.
+                <br>
+            </p>
+        </div>
+
+        <div class="carousel-slide">
+            <h3>Last Read:</h3>
+            <img src="Images/TheLostMetal.jpg">
+            
+            <p>
+                Finally finished Mistborn Era 2, sooo good. Maybe I'll finish Era 1...
+                <br>
+            </p>
+        </div>
     </div>
-
-    <div class="carousel-slide">
-        <h3>Next up:</h3>
-        <img src="Images/HowToBuildACar.jpg">
-        <p>
-            In Preperation for the new F1 regulations.
-            <br>
-        </p>
-    </div>
-
-    <div class="carousel-slide">
-        <h3>Last Read:</h3>
-        <img src="Images/TheLostMetal.jpg">
-        
-        <p>
-            Finally finished Mistborn Era 2, sooo good. Maybe I'll finish Era 1...
-            <br>
-        </p>
-    </div>
-
     <div class="carousel-controls">
         <button onclick="changeSlide(this, -1)">❮</button>
         <button onclick="changeSlide(this, 1)">❯</button>
     </div>
+    
 </div>
 
 <div class="container">
@@ -157,57 +160,57 @@
 </div>
 
 <div class="carousel" data-index="0">
+    <div class="carousel-track">   
+        <div class="carousel-slide">
+            <h3>Calix, Guided by Fate</h3>
+            <img src="Images/commander-calix.jpg">
+            <p>
+                Enchantment synergy, with some nice voltron to get Calix or another creaure through.
+                <br>
+                <a href="https://moxfield.com/decks/AwnP_-M6qkueqZUfj8kvQQ">View Deck</a>
+            </p>
+        </div>
 
-    <div class="carousel-slide">
-        <h3>Calix, Guided by Fate</h3>
-        <img src="Images/commander-calix.jpg">
-        <p>
-            Enchantment synergy, with some nice voltron to get Calix or another creaure through.
-            <br>
-            <a href="https://moxfield.com/decks/AwnP_-M6qkueqZUfj8kvQQ">View Deck</a>
-        </p>
+        <div class="carousel-slide">
+            <h3>Edward Kenway</h3>
+            <img src="Images/commander-ken.jpg">
+            <p>
+                Yo ho, yo ho, a pirate's life for me! Theft and Treasures my friends!
+                <br>
+                <a href="https://moxfield.com/decks/gSkHt0sWbk-h89G8BYV9rQ">View Deck</a>
+            </p>
+        </div>
+
+        <div class="carousel-slide">
+            <h3>Zinnia</h3>
+            <img src="Images/commander-zinnia.jpg">
+            <p>
+                A buncha cute critter coming to smack you. It's almost soley creature based.
+                <br>
+                <a href="https://moxfield.com/decks/Dnl8QyWeQESMeIcKaIExXA">View Deck</a>
+            </p>
+        </div>
+
+        <div class="carousel-slide">
+            <h3>Ravos, Soultender</h3>
+            <img src="Images/commander-ravos.jpg">
+            <p>
+                Partnered with Reyhan, human tribal where you through more expendable goobers and can get them back.
+                <br>
+                <a href="https://moxfield.com/decks/XtaYaqmMjUSYpjixYHa8hg">View Deck</a>
+            </p>
+        </div>
+
+        <div class="carousel-slide">
+            <h3>Reyhan, Last of the Abzan</h3>
+            <img src="Images/commander-reyhan.jpg">
+            <p>
+                Partnered with Ravos, she ensures that the counter you put on a dead creature don't go to waste.
+                <br>
+                <a href="https://moxfield.com/decks/XtaYaqmMjUSYpjixYHa8hg">View Deck</a>
+            </p>
+        </div>
     </div>
-
-    <div class="carousel-slide">
-        <h3>Edward Kenway</h3>
-        <img src="Images/commander-ken.jpg">
-        <p>
-            Yo ho, yo ho, a pirate's life for me! Theft and Treasures my friends!
-            <br>
-            <a href="https://moxfield.com/decks/gSkHt0sWbk-h89G8BYV9rQ">View Deck</a>
-        </p>
-    </div>
-
-    <div class="carousel-slide">
-        <h3>Zinnia</h3>
-        <img src="Images/commander-zinnia.jpg">
-        <p>
-            A buncha cute critter coming to smack you. It's almost soley creature based.
-            <br>
-            <a href="https://moxfield.com/decks/Dnl8QyWeQESMeIcKaIExXA">View Deck</a>
-        </p>
-    </div>
-
-    <div class="carousel-slide">
-        <h3>Ravos, Soultender</h3>
-        <img src="Images/commander-ravos.jpg">
-        <p>
-             Partnered with Reyhan, human tribal where you through more expendable goobers and can get them back.
-            <br>
-            <a href="https://moxfield.com/decks/XtaYaqmMjUSYpjixYHa8hg">View Deck</a>
-        </p>
-    </div>
-
-    <div class="carousel-slide">
-        <h3>Reyhan, Last of the Abzan</h3>
-        <img src="Images/commander-reyhan.jpg">
-        <p>
-            Partnered with Ravos, she ensures that the counter you put on a dead creature don't go to waste.
-            <br>
-            <a href="https://moxfield.com/decks/XtaYaqmMjUSYpjixYHa8hg">View Deck</a>
-        </p>
-    </div>
-
     <div class="carousel-controls">
         <button onclick="changeSlide(this, -1)">❮</button>
         <button onclick="changeSlide(this, 1)">❯</button>
