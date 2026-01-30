@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/Glaceon.png" type="image/png">
+    <div id="site-header"></div>
+</head>
+
+<style>
+    body {
+            font-family: Georgia;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+    header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        
+
+    nav {
+            margin: 15px 0;
+        }
+    
+</style>
+
+<script>
+
+async function loadLayout() {
+    const header = await fetch("header.html").then(res => res.text());
+    const footer = await fetch("footer.html").then(res => res.text());
+
+    document.getElementById("site-header").innerHTML = header;
+    document.getElementById("site-footer").innerHTML = footer;
+}
+
+loadLayout();
+</script>
+<div id="site-footer"></div>
+
+<script src="layout.js"></script>
