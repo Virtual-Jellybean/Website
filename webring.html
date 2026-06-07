@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Webring</title>
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #06091a;
+      font-family: 'Space Mono', 'Courier New', monospace;
+      color: rgba(170,200,255,.8);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    #stars { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title {
+      font-size: .58rem;
+      font-weight: 400;
+      letter-spacing: .48em;
+      text-transform: uppercase;
+      color: rgba(110,155,220,.4);
+      margin-bottom: 1.1rem;
+    }
+
+    #system {
+      position: relative;
+      width:  min(600px, 90vw);
+      height: min(600px, 90vw);
+      overflow: visible;
+    }
+
+    #system svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    /* Center hub */
+    .hub {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .sphere {
+      width: 62px; height: 62px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at 38% 32%, #c3e2fc, #1e55af, #0c1b42);
+      box-shadow: 0 0 22px rgba(60,125,240,.5), 0 0 70px rgba(35,85,205,.18);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .44rem; font-weight: 700; letter-spacing: .22em;
+      color: rgba(220,238,255,.95);
+      animation: glow 3.5s ease-in-out infinite;
+    }
+    @keyframes glow {
+      0%,100% { box-shadow: 0 0 22px rgba(60,125,240,.5), 0 0 70px rgba(35,85,205,.18); }
+      50%      { box-shadow: 0 0 36px rgba(60,125,240,.72), 0 0 100px rgba(35,85,205,.32); }
+    }
+
+    /* Planet nodes */
+    .planet {
+      position: absolute;
+      transform: translate(-50%,-50%);
+      text-decoration: none;
+      cursor: pointer;
+      z-index: 5;
+    }
+    .pball {
+      border-radius: 50%;
+      transition: filter .25s, transform .25s;
+    }
+    .planet:hover .pball { filter: brightness(1.65) saturate(1.2); transform: scale(1.18); }
+    .plabel {
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: .42rem;
+      letter-spacing: .08em;
+      white-space: nowrap;
+      opacity: .65;
+      pointer-events: none;
+    }
+
+    /* Info panel */
+    #panel {
+      margin-top: 10px;
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pbox {
+      border: 1px solid rgba(100,145,255,.1);
+      border-radius: 7px;
+      padding: 13px 32px;
+      background: rgba(255,255,255,.025);
+      text-align: center;
+      min-width: 275px;
+      opacity: 0;
+      transition: opacity .28s;
+      pointer-events: none;
+    }
+    .pbox.on { opacity: 1; pointer-events: auto; }
+    .pname { font-size: .82rem; font-weight: 700; margin-bottom: 5px; }
+    .pdesc { font-size: .52rem; letter-spacing: .04em; color: rgba(130,170,240,.55); margin-bottom: 10px; }
+    .plink {
+      font-size: .49rem; letter-spacing: .13em; text-transform: uppercase;
+      text-decoration: none; border-bottom: 1px solid currentColor;
+      padding-bottom: 1px; opacity: .65; transition: opacity .2s;
+    }
+    .plink:hover { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+
+<div class="wrap">
+  <div class="title">✦ &nbsp; my webring &nbsp; ✦</div>
+
+  <div id="system">
+    <svg id="rings" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div class="hub"><div class="sphere">you</div></div>
+  </div>
+
+  <div id="panel">
+    <div class="pbox" id="pbox">
+      <div class="pname" id="pname"></div>
+      <div class="pdesc" id="pdesc"></div>
+      <a class="plink" id="plink" href="#" target="_blank" rel="noopener noreferrer">visit →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const FRIENDS = [
+  { name:"Eden",  url:"https://bluethesius.github.io",  desc:"design & photography", color:"#FF6B9D", size:36 },
+  { name:"Brian",    url:"https://brianfeuerman.com",    desc:"open source dev",       color:"#4FC8FF", size:28 },
+  //{ name:"carol",  url:"https://carol.example.com",  desc:"music & tech",          color:"#FFD166", size:34 },
+  //{ name:"dave",   url:"https://dave.example.com",   desc:"art & illustration",    color:"#5BF5A0", size:30 },
+  //{ name:"eve",    url:"https://eve.example.com",    desc:"writing & poetry",      color:"#FF8C42", size:32 },
+  //{ name:"frank",  url:"https://frank.example.com",  desc:"retro gaming",          color:"#D0A0FF", size:27 },
+];
+// ════════════════════════════════════════════════════════
+
+// Auto-space orbits based on the number of friends.
+// INNER = innermost orbit radius (SVG units, out of 300 max).
+// OUTER = outermost orbit radius. Planets beyond 270 get clipped on small screens.
+const N = FRIENDS.length;
+const INNER = 75, OUTER = 262;
+const radStep = N > 1 ? (OUTER - INNER) / (N - 1) : 0;
+const perStep = N > 1 ? 35 / (N - 1) : 0;
+
+const orbits = FRIENDS.map((_, i) => ({
+  r:  INNER + i * radStep,       // orbit radius in SVG units
+  T:  8 + i * perStep,           // orbital period (seconds)
+  a0: (i / N) * Math.PI * 2,    // staggered starting angle
+}));
+
+// ── SVG orbit rings ────────────────────────────────
+const svgEl = document.getElementById('rings');
+FRIENDS.forEach((f, i) => {
+  const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+  c.setAttribute('cx', 300); c.setAttribute('cy', 300);
+  c.setAttribute('r', orbits[i].r);
+  c.setAttribute('fill', 'none');
+  c.setAttribute('stroke', f.color);
+  c.setAttribute('stroke-opacity', '0.13');
+  c.setAttribute('stroke-width', '1');
+  c.setAttribute('stroke-dasharray', '3 9');
+  svgEl.appendChild(c);
+});
+
+// ── Planet nodes ───────────────────────────────────
+const sys  = document.getElementById('system');
+const pbox = document.getElementById('pbox');
+const pnam = document.getElementById('pname');
+const pdsc = document.getElementById('pdesc');
+const plnk = document.getElementById('plink');
+
+const planets = FRIENDS.map((f, i) => {
+  const a = document.createElement('a');
+  a.className = 'planet';
+  a.href = f.url;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+
+  const b = document.createElement('div');
+  b.className = 'pball';
+  b.style.cssText =
+    `width:${f.size}px;height:${f.size}px;` +
+    `background:radial-gradient(ellipse at 38% 32%,${f.color}ff,${f.color}aa 42%,${f.color}44);` +
+    `box-shadow:0 0 10px ${f.color}77,0 0 38px ${f.color}22;`;
+
+  const l = document.createElement('span');
+  l.className = 'plabel';
+  l.textContent = f.name;
+  l.style.color = f.color + 'bb';
+
+  a.appendChild(b);
+  a.appendChild(l);
+  sys.appendChild(a);
+
+  a.addEventListener('mouseenter', () => {
+    pnam.textContent = f.name; pnam.style.color = f.color;
+    pdsc.textContent = f.desc;
+    plnk.href = f.url; plnk.style.color = f.color;
+    pbox.classList.add('on');
+  });
+  a.addEventListener('mouseleave', () => pbox.classList.remove('on'));
+
+  return { el: a, ...orbits[i] };
+});
+
+// ── Starfield canvas ───────────────────────────────
+const cv  = document.getElementById('stars');
+const ctx = cv.getContext('2d');
+let stars = [], shots = [];
+
+function buildStars() {
+  cv.width = innerWidth; cv.height = innerHeight;
+  stars = Array.from({length:200}, () => ({
+    x: Math.random()*cv.width, y: Math.random()*cv.height,
+    r: Math.random()*1.1+.15,
+    b: Math.random()*.4+.08,     // base opacity
+    f: Math.random()*2+.7,       // flicker frequency
+    ph: Math.random()*Math.PI*2, // phase offset
+  }));
+}
+buildStars();
+addEventListener('resize', buildStars);
+
+// ── Main animation loop ────────────────────────────
+let t0 = null;
+
+function loop(ts) {
+  if (!t0) t0 = ts;
+  const t = (ts - t0) / 1000; // elapsed seconds
+
+  // Orbit planets
+  const W = sys.clientWidth, H = sys.clientHeight;
+  const sc = W / 600; // scale SVG units → screen px
+  planets.forEach(p => {
+    const angle = (t / p.T) * Math.PI * 2 + p.a0;
+    p.el.style.left = (W/2 + p.r * sc * Math.cos(angle)) + 'px';
+    p.el.style.top  = (H/2 + p.r * sc * Math.sin(angle)) + 'px';
+  });
+
+  // Twinkling stars
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  stars.forEach(s => {
+    const a = Math.max(0, s.b + Math.sin(t * s.f + s.ph) * .17);
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+    ctx.fillStyle = `rgba(215,228,255,${a})`;
+    ctx.fill();
+  });
+
+  // Occasional shooting star
+  if (Math.random() < .003) shots.push({
+    x: Math.random()*cv.width,
+    y: Math.random()*cv.height*.55,
+    vx: Math.random()*4+3,
+    vy: Math.random()*2+1,
+    len: Math.random()*90+45,
+    life: 1,
+  });
+  shots = shots.filter(s => s.life > 0);
+  shots.forEach(s => {
+    const g = ctx.createLinearGradient(s.x-s.vx*s.len*.12, s.y-s.vy*s.len*.12, s.x, s.y);
+    g.addColorStop(0,'rgba(255,255,255,0)');
+    g.addColorStop(1,`rgba(255,255,255,${s.life*.75})`);
+    ctx.beginPath();
+    ctx.moveTo(s.x-s.vx*s.len*.12, s.y-s.vy*s.len*.12);
+    ctx.lineTo(s.x, s.y);
+    ctx.strokeStyle = g; ctx.lineWidth = 1.2; ctx.stroke();
+    s.x += s.vx; s.y += s.vy; s.life -= .025;
+  });
+
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
