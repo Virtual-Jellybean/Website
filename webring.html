@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Webring</title>
-  <link rel="icon" href="Images/Glaceon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/Glaceon.png" type="image/png">
+    <link rel="stylesheet" href="style/main.css"></link>
+    <div id="site-header"></div>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -311,14 +309,5 @@ requestAnimationFrame(loop);
 </script>
 
 <div id="site-footer"></div>
-<script>
-async function loadLayout() {
-  const header = await fetch("header.html").then(res => res.text());
-  const footer = await fetch("footer.html").then(res => res.text());
-  document.getElementById("site-header").innerHTML = header;
-  document.getElementById("site-footer").innerHTML = footer;
-}
-loadLayout();
-</script>
 </body>
 </html>
