@@ -17,8 +17,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
       user-select: none;
+      margin: 0;
+      width: 100%;
+    }
+
+    #site-header, #site-footer {
+      width: 100%;
+    }
+
+    .wrap {
+      flex: 1;
     }
 
     #stars { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
