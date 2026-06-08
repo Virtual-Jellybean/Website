@@ -58,6 +58,102 @@
         }
 
         .tile a:hover { text-decoration: underline; }
+
+        /* ===== Book Shelf Styles ===== */
+        .book-shelf {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .book-favorites-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .book-featured-row {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .book-card {
+            position: relative;
+            cursor: default;
+            border-radius: 6px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .book-card img {
+            display: block;
+            border-radius: 6px;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .book-card:hover img {
+            transform: scale(1.04);
+            box-shadow: 6px 6px 18px rgba(0,0,0,0.7);
+        }
+
+        .book-card.featured img {
+            height: 260px;
+            width: auto;
+        }
+
+        .book-card.small img {
+            height: 140px;
+            width: auto;
+        }
+
+        .book-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.78);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.25s;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .book-card:hover .book-overlay {
+            opacity: 1;
+        }
+
+        .book-overlay .book-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            opacity: 0.65;
+            margin-bottom: 4px;
+        }
+
+        .book-overlay .book-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .book-card.featured .book-overlay .book-title { font-size: 15px; }
+        .book-card.small .book-overlay .book-title { font-size: 12px; }
+
+        .book-overlay .book-desc {
+            opacity: 0.85;
+        }
+
+        .book-card.featured .book-overlay .book-desc { font-size: 12px; }
+        .book-card.small .book-overlay .book-desc { font-size: 11px; }
     </style>
 </head>
 
@@ -68,21 +164,65 @@
 
 
 <p class="section-label">What books have I been reading?</p>
-<div class="tile-grid">
-    <div class="tile">
-        <img src="Images/EqualRites.jpg" alt="Equal Rites">
-        <h3>Currently Reading</h3>
-        <p>Rereading on my way to finish the whole Discworld series.</p>
+<div class="book-shelf">
+    <!-- Left favorites column -->
+    <div class="book-favorites-col">
+        <div class="book-card small">
+            <img src="Images/NightWatch.jpg" alt="Night Watch">
+            <div class="book-overlay">
+                <div class="book-label">Favorite</div>
+                <div class="book-title">Night Watch</div>
+                <div class="book-desc">Terry Pratchett at his finest. Vimes vs. time itself.</div>
+            </div>
+        </div>
+        <div class="book-card small">
+            <img src="Images/Hogfather.jpg" alt="Hogfather">
+            <div class="book-overlay">
+                <div class="book-label">Favorite</div>
+                <div class="book-title">Hogfather</div>
+                <div class="book-desc">Death fills in for the Hogfather. Hilarious and oddly touching.</div>
+            </div>
+        </div>
     </div>
-    <div class="tile">
-        <img src="Images/HowToBuildACar.jpg" alt="How to Build a Car">
-        <h3>Next Up</h3>
-        <p>In preparation for the new F1 regulations.</p>
+
+    <!-- Center: featured books -->
+    <div class="book-featured-row">
+        <div class="book-card featured">
+            <img src="Images/ThePriceOfValor.jpg" alt="The Price of Valor">
+            <div class="book-overlay">
+                <div class="book-label">Currently Reading</div>
+                <div class="book-title">The Price of Valor</div>
+                <div class="book-desc">Finishing off the series — forgot how much I love magic Napoleonic Wars.</div>
+            </div>
+        </div>
+        <div class="book-card featured">
+            <img src="Images/TheLostMetal.jpg" alt="The Lost Metal">
+            <div class="book-overlay">
+                <div class="book-label">Last Read</div>
+                <div class="book-title">The Lost Metal</div>
+                <div class="book-desc">Finally finished Mistborn Era 2. Sooo good.</div>
+            </div>
+        </div>
     </div>
-    <div class="tile">
-        <img src="Images/TheLostMetal.jpg" alt="The Lost Metal">
-        <h3>Last Read</h3>
-        <p>Finally finished Mistborn Era 2, sooo good. Maybe I'll finish Era 1...</p>
+
+    <!-- Right favorites column -->
+    <div class="book-favorites-col">
+        <div class="book-card small">
+            <img src="Images/StarWarsRevengeOfTheSith.jpg" alt="Revenge of the Sith">
+            <div class="book-overlay">
+                <div class="book-label">Favorite</div>
+                <div class="book-title">Revenge of the Sith</div>
+                <div class="book-desc">The novelization hits harder than the film. Genuinely great.</div>
+            </div>
+        </div>
+        <div class="book-card small">
+            <img src="Images/EqualRites.jpg" alt="Equal Rites">
+            <div class="book-overlay">
+                <div class="book-label">Favorite</div>
+                <div class="book-title">Equal Rites</div>
+                <div class="book-desc">Pratchett takes on gender with wit and heart.</div>
+            </div>
+        </div>
     </div>
 </div>
 
