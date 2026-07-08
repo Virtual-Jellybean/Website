@@ -102,7 +102,7 @@
       border-radius: 50%;
       transition: filter .25s, transform .25s;
     }
-    .planet:hover .pball { filter: brightness(1.65) saturate(1.2); transform: scale(1.18); }
+    /* .planet:hover .pball { filter: brightness(1.65) saturate(1.2); transform: scale(1.18); } */
     .plabel {
       position: absolute;
       top: calc(100% + 5px);
@@ -226,7 +226,7 @@ const planets = FRIENDS.map((f, i) => {
   b.style.cssText =
     `width:${f.size}px;height:${f.size}px;` +
     `background:radial-gradient(ellipse at 38% 32%,${f.color}ff,${f.color}aa 42%,${f.color}44);` +
-    `box-shadow:0 0 10px ${f.color}77,0 0 38px ${f.color}22;`;
+    // `box-shadow:0 0 10px ${f.color}77,0 0 38px ${f.color}22;`;
 
   const l = document.createElement('span');
   l.className = 'plabel';
