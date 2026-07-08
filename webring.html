@@ -130,8 +130,8 @@
       background: rgba(255,255,255,.025);
       text-align: center;
       min-width: 275px;
-      opacity: 0;
-      transition: opacity .28s;
+      /* opacity: 0; */
+      /* transition: opacity .28s; */
       pointer-events: none;
     }
     .pbox.on { opacity: 1; pointer-events: auto; }
@@ -258,8 +258,8 @@ function buildStars() {
   stars = Array.from({length:200}, () => ({
     x: Math.random()*cv.width, y: Math.random()*cv.height,
     r: Math.random()*1.1+.15,
-    /*b: Math.random()*.4+.08,     // base opacity
-    f: Math.random()*2+.7,  */     // flicker frequency
+    b: Math.random()*.4+.08,     // base opacity
+    f: Math.random()*2+.7,       // flicker frequency
     ph: Math.random()*Math.PI*2, // phase offset
   }));
 }
