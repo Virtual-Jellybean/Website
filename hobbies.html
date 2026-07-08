@@ -62,24 +62,25 @@
         /* ===== Book Shelf Styles ===== */
         .book-shelf {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            gap: 24px;
+            gap: 32px;
             padding: 20px;
-            flex-wrap: wrap;
         }
 
         .book-favorites-col {
             display: flex;
-            /* flex-direction: column; */
+            flex-direction: row;
             gap: 16px;
-            align-items: center;
+            align-items: flex-end;
+            justify-content: center;
         }
 
         .book-featured-row {
             display: flex;
             gap: 24px;
-            align-items: center;
+            align-items: flex-end;
+            justify-content: center;
         }
 
         .book-card {
