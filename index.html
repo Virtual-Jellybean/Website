@@ -12,6 +12,81 @@
         .photo-gallery img { height: 200px; margin: 10px; border-radius: 10px; }
         .resume { margin-top: 20px; }
         .resume a { text-decoration: none; color: blue; font-size: 18px; }
+
+        /* ===== Project Cards ===== */
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 10px;
+        }
+
+        .project-card {
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 20px;
+            background: rgba(255,255,255,0.04);
+            text-align: left;
+        }
+
+        .project-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .project-images {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+
+        .project-images img {
+            flex: 1 1 0;
+            min-width: 0;
+            max-width: calc(33.33% - 7px);
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .project-images .img-placeholder {
+            flex: 1 1 0;
+            min-width: 0;
+            max-width: calc(33.33% - 7px);
+            height: 180px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.06);
+            border: 2px dashed rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            opacity: 0.5;
+        }
+
+        .project-blurb {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 14px;
+            opacity: 0.9;
+        }
+
+        .project-card a.cad-link {
+            display: inline-block;
+            padding: 7px 16px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            color: inherit;
+            transition: background 0.2s;
+        }
+
+        .project-card a.cad-link:hover {
+            background: rgba(255,255,255,0.1);
+        }
     </style>
 </head>
 <body>
@@ -33,7 +108,16 @@
         </div>
 
         <h2>Technical Projects</h2>
-        
+        <div class="project-card">
+            <h3>B^3 (B-Cubed)</h3>
+            <div class="project-images">
+                <img src="Images/B^3_CAD.png" alt="Description">
+                <img src="Images/B^3_Finished_Exterior.jpg" alt="Description">
+                <img src="Images/B^3_Finished_Interior.jpg" alt="Description">
+            </div>
+            <p class="project-blurb">We designed, built, and tested a  hamster drive mechanism powering large-scale spherical robot. Utilizing magnetics to allow independent head and body systems and easy servicing of both components.</p>
+            <p><a href="Assets/B_Cubed_Assembly_v2.zip" target="_blank">Download CAD (STL)</a></p>
+        </div>
 
 
     <div class="resume">
