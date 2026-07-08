@@ -225,7 +225,7 @@ const planets = FRIENDS.map((f, i) => {
   b.className = 'pball';
   b.style.cssText =
     `width:${f.size}px;height:${f.size}px;` +
-    `background:${f.color};` +
+    `background:radial-gradient(ellipse at 38% 32%,${f.color}ff,${f.color}aa 42%,${f.color}44);` +
     `box-shadow:0 0 10px ${f.color}77,0 0 38px ${f.color}22;`;
 
   const l = document.createElement('span');
