@@ -1,9 +1,12 @@
-// Fetches the 10 most recently read books from Goodreads and writes Assets/books.json.
+// Fetches my most recently read books from Goodreads and writes Assets/books.json.
 // Run from the repo root: node scripts/fetch-goodreads.js
 const fs = require("fs");
 
+// How many books to show on the site — change this number only.
+const BOOK_COUNT = 18;
+
 const FEED =
-  "https://www.goodreads.com/review/list_rss/98654958?shelf=read&sort=date_read&order=d&per_page=10";
+  `https://www.goodreads.com/review/list_rss/98654958?shelf=read&sort=date_read&order=d&per_page=${BOOK_COUNT}`;
 
 function field(block, tag) {
   const m = block.match(
@@ -20,7 +23,7 @@ async function main() {
   const books = xml
     .split("<item>")
     .slice(1)
-    .slice(0, 9)
+    .slice(0, BOOK_COUNT)
     .map((b) => ({
       title: field(b, "title"),
       author: field(b, "author_name"),
