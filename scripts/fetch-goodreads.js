@@ -20,7 +20,7 @@ async function main() {
   const books = xml
     .split("<item>")
     .slice(1)
-    .slice(0, 10)
+    .slice(0, 9)
     .map((b) => ({
       title: field(b, "title"),
       author: field(b, "author_name"),
