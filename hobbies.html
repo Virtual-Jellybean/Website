@@ -155,6 +155,17 @@
 
         .book-card.featured .book-overlay .book-desc { font-size: 12px; }
         .book-card.small .book-overlay .book-desc { font-size: 11px; }
+
+        .book-recent-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 0 20px 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 
@@ -245,6 +256,9 @@
     </div>
 </div>
 
+<p class="section-label">Recently Read (pulled from my Goodreads)</p>
+<div class="book-recent-row" id="recent-books"></div>
+
 <p class="section-label">Here are some of the Magic the Gathering commander decks I'm currently enjoying.</p>
 <div class="tile-grid">
     <div class="tile">
@@ -293,6 +307,52 @@ async function loadLayout() {
 
 loadLayout();
 
+async function loadRecentBooks() {
+    const row = document.getElementById("recent-books");
+    try {
+        const books = await fetch("Assets/books.json").then(res => res.json());
+        for (const book of books) {
+            const card = document.createElement("a");
+            card.className = "book-card small";
+            card.href = book.url;
+            card.target = "_blank";
+
+            const img = document.createElement("img");
+            img.src = book.image;
+            img.alt = book.title;
+            img.loading = "lazy";
+            card.appendChild(img);
+
+            const overlay = document.createElement("div");
+            overlay.className = "book-overlay";
+
+            const readAt = new Date(book.readAt);
+            if (!isNaN(readAt)) {
+                const label = document.createElement("div");
+                label.className = "book-label";
+                label.textContent = readAt.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+                overlay.appendChild(label);
+            }
+
+            const title = document.createElement("div");
+            title.className = "book-title";
+            title.textContent = book.title;
+            overlay.appendChild(title);
+
+            const author = document.createElement("div");
+            author.className = "book-desc";
+            author.textContent = book.author;
+            overlay.appendChild(author);
+
+            card.appendChild(overlay);
+            row.appendChild(card);
+        }
+    } catch (err) {
+        row.textContent = "Couldn't load the shelf right now.";
+    }
+}
+
+loadRecentBooks();
 
 </script>
 
