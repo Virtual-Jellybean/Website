@@ -1,65 +1,128 @@
 [
-    {
-        "title":  "The Republic of Thieves (Gentleman Bastard, #3)",
-        "author":  "Scott Lynch",
-        "image":  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1769467502l/2890090._SY475_.jpg",
-        "url":  "https://www.goodreads.com/book/show/2890090",
-        "readAt":  "Tue, 28 Jul 2026 00:00:00 +0000"
-    },
-    {
-        "title":  "The Butcher\u0027s Masquerade (Dungeon Crawler Carl, #5)",
-        "author":  "Matt Dinniman",
-        "image":  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1734098643l/220772913._SY475_.jpg",
-        "url":  "https://www.goodreads.com/book/show/220772913",
-        "readAt":  "Wed, 22 Jul 2026 00:00:00 +0000"
-    },
-    {
-        "title":  "A Knight of the Seven Kingdoms (The Tales of Dunk and Egg, #1-3)",
-        "author":  "George R.R. Martin",
-        "image":  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1693445229l/18635622.jpg",
-        "url":  "https://www.goodreads.com/book/show/18635622",
-        "readAt":  "Tue, 21 Jul 2026 00:00:00 +0000"
-    },
-    {
-        "title":  "The Gate of the Feral Gods (Dungeon Crawler Carl, #4)",
-        "author":  "Matt Dinniman",
-        "image":  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1734098514l/220772908._SY475_.jpg",
-        "url":  "https://www.goodreads.com/book/show/220772908",
-        "readAt":  "Mon, 6 Jul 2026 00:00:00 +0000"
-    },
-    {
-        "title":  "The Dungeon Anarchist\u0027s Cookbook (Dungeon Crawler Carl, #3)",
-        "author":  "Matt Dinniman",
-        "image":  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1719949594l/211721809._SY475_.jpg",
-        "url":  "https://www.goodreads.com/book/show/211721809",
-        "readAt":  "Tue, 30 Jun 2026 00:00:00 +0000"
-    },
-    {
-        "title":  "Carl\u0027s Doomsday Scenario (Dungeon Crawler Carl, #2)",
-        "author":  "Matt Dinniman",
-        "image":  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1719949673l/212393364._SY475_.jpg",
-        "url":  "https://www.goodreads.com/book/show/212393364",
-        "readAt":  "Fri, 26 Jun 2026 00:00:00 +0000"
-    },
-    {
-        "title":  "The Infernal Battalion (The Shadow Campaigns, #5)",
-        "author":  "Django Wexler",
-        "image":  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1498788742l/25845205.jpg",
-        "url":  "https://www.goodreads.com/book/show/25845205",
-        "readAt":  "Thu, 25 Jun 2026 00:00:00 +0000"
-    },
-    {
-        "title":  "The Price of Valour (The Shadow Campaigns, #3)",
-        "author":  "Django Wexler",
-        "image":  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1443527225l/23346335.jpg",
-        "url":  "https://www.goodreads.com/book/show/23346335",
-        "readAt":  "Fri, 12 Jun 2026 00:00:00 +0000"
-    },
-    {
-        "title":  "Red Seas Under Red Skies (Gentleman Bastard, #2)",
-        "author":  "Scott Lynch",
-        "image":  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1659900333l/40604556._SY475_.jpg",
-        "url":  "https://www.goodreads.com/book/show/40604556",
-        "readAt":  "Sun, 7 Jun 2026 00:00:00 +0000"
-    }
+  {
+    "title": "The Republic of Thieves (Gentleman Bastard, #3)",
+    "author": "Scott Lynch",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1769467502l/2890090._SY475_.jpg",
+    "url": "https://www.goodreads.com/book/show/2890090",
+    "readAt": "Tue, 28 Jul 2026 00:00:00 +0000"
+  },
+  {
+    "title": "The Butcher's Masquerade (Dungeon Crawler Carl, #5)",
+    "author": "Matt Dinniman",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1734098643l/220772913._SY475_.jpg",
+    "url": "https://www.goodreads.com/book/show/220772913",
+    "readAt": "Wed, 22 Jul 2026 00:00:00 +0000"
+  },
+  {
+    "title": "A Knight of the Seven Kingdoms (The Tales of Dunk and Egg, #1-3)",
+    "author": "George R.R. Martin",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1693445229l/18635622.jpg",
+    "url": "https://www.goodreads.com/book/show/18635622",
+    "readAt": "Tue, 21 Jul 2026 00:00:00 +0000"
+  },
+  {
+    "title": "The Gate of the Feral Gods (Dungeon Crawler Carl, #4)",
+    "author": "Matt Dinniman",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1734098514l/220772908._SY475_.jpg",
+    "url": "https://www.goodreads.com/book/show/220772908",
+    "readAt": "Mon, 6 Jul 2026 00:00:00 +0000"
+  },
+  {
+    "title": "The Dungeon Anarchist's Cookbook (Dungeon Crawler Carl, #3)",
+    "author": "Matt Dinniman",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1719949594l/211721809._SY475_.jpg",
+    "url": "https://www.goodreads.com/book/show/211721809",
+    "readAt": "Tue, 30 Jun 2026 00:00:00 +0000"
+  },
+  {
+    "title": "Carl's Doomsday Scenario (Dungeon Crawler Carl, #2)",
+    "author": "Matt Dinniman",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1719949673l/212393364._SY475_.jpg",
+    "url": "https://www.goodreads.com/book/show/212393364",
+    "readAt": "Fri, 26 Jun 2026 00:00:00 +0000"
+  },
+  {
+    "title": "The Infernal Battalion (The Shadow Campaigns, #5)",
+    "author": "Django Wexler",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1498788742l/25845205.jpg",
+    "url": "https://www.goodreads.com/book/show/25845205",
+    "readAt": "Thu, 25 Jun 2026 00:00:00 +0000"
+  },
+  {
+    "title": "The Price of Valour (The Shadow Campaigns, #3)",
+    "author": "Django Wexler",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1443527225l/23346335.jpg",
+    "url": "https://www.goodreads.com/book/show/23346335",
+    "readAt": "Fri, 12 Jun 2026 00:00:00 +0000"
+  },
+  {
+    "title": "Red Seas Under Red Skies (Gentleman Bastard, #2)",
+    "author": "Scott Lynch",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1659900333l/40604556._SY475_.jpg",
+    "url": "https://www.goodreads.com/book/show/40604556",
+    "readAt": "Sun, 7 Jun 2026 00:00:00 +0000"
+  },
+  {
+    "title": "A Wizard of Earthsea",
+    "author": "Ursula K. Le Guin",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353424536l/13642.jpg",
+    "url": "https://www.goodreads.com/book/show/13642",
+    "readAt": "Wed, 3 Jun 2026 00:00:00 +0000"
+  },
+  {
+    "title": "The Lies of Locke Lamora (Gentleman Bastard, #1)",
+    "author": "Scott Lynch",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1458646334l/29588376._SY475_.jpg",
+    "url": "https://www.goodreads.com/book/show/29588376",
+    "readAt": "Sun, 22 Mar 2026 00:00:00 +0000"
+  },
+  {
+    "title": "Gardens of the Moon (Malazan Book of the Fallen, #1)",
+    "author": "Steven Erikson",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1548497031l/55399._SY475_.jpg",
+    "url": "https://www.goodreads.com/book/show/55399",
+    "readAt": "Sat, 21 Mar 2026 00:00:00 +0000"
+  },
+  {
+    "title": "Wyrd Sisters (Discworld, #6; Witches, #2)",
+    "author": "Terry Pratchett",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1275974472l/34504.jpg",
+    "url": "https://www.goodreads.com/book/show/34504",
+    "readAt": "Fri, 27 Feb 2026 00:00:00 +0000"
+  },
+  {
+    "title": "The Lost Metal (Mistborn, #7)",
+    "author": "Brandon Sanderson",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1653582537l/23947089.jpg",
+    "url": "https://www.goodreads.com/book/show/23947089",
+    "readAt": "Tue, 6 Jan 2026 00:00:00 +0000"
+  },
+  {
+    "title": "The Bands of Mourning (Mistborn, #6)",
+    "author": "Brandon Sanderson",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1730639847l/18739426._SY475_.jpg",
+    "url": "https://www.goodreads.com/book/show/18739426",
+    "readAt": "Sat, 20 Dec 2025 00:00:00 +0000"
+  },
+  {
+    "title": "Last Argument of Kings (The First Law, #3)",
+    "author": "Joe Abercrombie",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1737810948l/944076._SY475_.jpg",
+    "url": "https://www.goodreads.com/book/show/944076",
+    "readAt": "Tue, 25 Nov 2025 00:00:00 +0000"
+  },
+  {
+    "title": "Before They Are Hanged (The First Law, #2)",
+    "author": "Joe Abercrombie",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1737810309l/902715._SY475_.jpg",
+    "url": "https://www.goodreads.com/book/show/902715",
+    "readAt": "Mon, 17 Nov 2025 00:00:00 +0000"
+  },
+  {
+    "title": "Wind and Truth (The Stormlight Archive, #5)",
+    "author": "Brandon Sanderson",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1724944713l/203578847._SY475_.jpg",
+    "url": "https://www.goodreads.com/book/show/203578847",
+    "readAt": "Wed, 1 Oct 2025 00:00:00 +0000"
+  }
 ]
