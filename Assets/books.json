@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Bright Sword",
+    "author": "Lev Grossman",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1699329867l/201750794._SY475_.jpg",
+    "url": "https://www.goodreads.com/book/show/201750794",
+    "readAt": "Fri, 7 Aug 2026 00:00:00 +0000"
+  },
+  {
     "title": "The Republic of Thieves (Gentleman Bastard, #3)",
     "author": "Scott Lynch",
     "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1769467502l/2890090._SY475_.jpg",
@@ -117,12 +124,5 @@
     "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1737810309l/902715._SY475_.jpg",
     "url": "https://www.goodreads.com/book/show/902715",
     "readAt": "Mon, 17 Nov 2025 00:00:00 +0000"
-  },
-  {
-    "title": "Wind and Truth (The Stormlight Archive, #5)",
-    "author": "Brandon Sanderson",
-    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1724944713l/203578847._SY475_.jpg",
-    "url": "https://www.goodreads.com/book/show/203578847",
-    "readAt": "Wed, 1 Oct 2025 00:00:00 +0000"
   }
 ]
