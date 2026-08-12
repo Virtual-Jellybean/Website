@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Lions of Al-Rassan",
+    "author": "Guy Gavriel Kay",
+    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1659900897l/104101._SY475_.jpg",
+    "url": "https://www.goodreads.com/book/show/104101",
+    "readAt": "Tue, 11 Aug 2026 00:00:00 +0000"
+  },
+  {
     "title": "The Bright Sword",
     "author": "Lev Grossman",
     "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1699329867l/201750794._SY475_.jpg",
@@ -117,12 +124,5 @@
     "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1737810948l/944076._SY475_.jpg",
     "url": "https://www.goodreads.com/book/show/944076",
     "readAt": "Tue, 25 Nov 2025 00:00:00 +0000"
-  },
-  {
-    "title": "Before They Are Hanged (The First Law, #2)",
-    "author": "Joe Abercrombie",
-    "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1737810309l/902715._SY475_.jpg",
-    "url": "https://www.goodreads.com/book/show/902715",
-    "readAt": "Mon, 17 Nov 2025 00:00:00 +0000"
   }
 ]
