@@ -171,17 +171,8 @@
 const FRIENDS = [
 { name:"Brian",    url:"https://brianfeuerman.com",    desc:"Astrophotography and Aerospace", color:"#4FC8FF", size:28 },  
 { name:"Eden",  url:"https://bluetheseus.github.io",  desc:"Electronics Guru", color:"#FF6B9D", size:36 },
-  
-  //{ name:"carol",  url:"https://carol.example.com",  desc:"music & tech",          color:"#FFD166", size:34 },
-  //{ name:"dave",   url:"https://dave.example.com",   desc:"art & illustration",    color:"#5BF5A0", size:30 },
-  //{ name:"eve",    url:"https://eve.example.com",    desc:"writing & poetry",      color:"#FF8C42", size:32 },
-  //{ name:"frank",  url:"https://frank.example.com",  desc:"retro gaming",          color:"#D0A0FF", size:27 },
 ];
 // ════════════════════════════════════════════════════════
-
-// Auto-space orbits based on the number of friends.
-// INNER = innermost orbit radius (SVG units, out of 300 max).
-// OUTER = outermost orbit radius. Planets beyond 270 get clipped on small screens.
 const N = FRIENDS.length;
 const INNER = 75, OUTER = 262;
 const radStep = N > 1 ? (OUTER - INNER) / (N - 1) : 0;
